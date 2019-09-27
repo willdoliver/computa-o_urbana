@@ -1,2 +1,3 @@
-# computa-o_urbana
-Computação Urbana 
+# Computação Urbana
+
+Disciplina de mestrado 
