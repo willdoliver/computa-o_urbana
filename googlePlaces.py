@@ -48,7 +48,7 @@ sep = '&'
 
 url_api = 'https://maps.googleapis.com/maps/api/place/textsearch/json?'
 query = 'Burger King'
-key = 'AIzaSyAfCTfMi7XctJldjCxi7ZquvblPf0bJEt4'
+key = '<KEY>'
 fields = [
     'photos',
     'formatted_address',
