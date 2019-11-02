@@ -1,0 +1,44 @@
+Bar Brasil	-19.9392	-43.92758	Rua Maranhão, 11150, Funcionários, Belo Horizonte, MG - 30150-331
+O Bar	-19.93493	-43.92734	Rua Cláudio Manoel, 296, Savassi, Belo Horizonte, MG - 30140-100
+Bar do Zezé	-19.98979	-44.03132	Rua Pinheiro Chagas, 406, Barreiro de Baixo, Belo Horizonte, MG - 30642-030
+Restaurante e Choperia Pinguim	-19.94095	-43.93223	Rua Gr. Mogol, 157, Carmo, Belo Horizonte, MG - 30310-010
+Bar e Boi	-19.86943	-43.98599	Avenida Fleming, 294, Santa Terezinha, Belo Horizonte, MG - 31310-490
+Lanchobares  -  - Calafate	-19.92417	-43.97054	Rua Platina, 1470, Calafate, Belo Horizonte, MG - 30411-330
+Bar do Careca O Pescador - Floramar	-19.83555	-43.93483	Avenida José Lopes Muradas, 310, Floramar, Belo Horizonte, MG - 31742-084
+Mixido Bar e Restaurante	-19.93935	-43.929	Avenida Do Contorno, 5602, Centro, Belo Horizonte, MG - 30110-036
+Chapa Magica Bar	-19.84542	-43.92133	Avenida Waldomiro Lobo, 261, Heliópolis, Belo Horizonte, MG - 31814-630
+Bananeiras Bar	-19.92754	-43.96305	Rua Rubi, 525, Prado, Belo Horizonte, MG - 30411-195
+Jack Rock Bar	-19.93956	-43.92982	Avenida Do Contorno, 5623, Centro, Belo Horizonte, MG - 30110-035
+Juvenas Bar	-19.88087	-44.01159	Avenida Serrana, 522, Sarandí, Belo Horizonte, MG - 30882-370
+Estúdio da Carne Bar	-19.92902	-43.92177	Avenida Do Contorno, 3946, Centro, Belo Horizonte, MG - 30110-022
+Sindicato dos Hotéis Restaurantes Bares e Similares de Belo Horizonte	-19.9254	-43.9241	Avenida Brasil, 510, Santa Efigênia, Belo Horizonte, MG - 30140-001
+Marquês Bar & Café	-19.94032	-43.94729	Rua Mq. de Paranaguá, 56, Santo Antônio, Belo Horizonte, MG - 30350-080
+Confraria Bar e Restaurante	-19.83366	-43.86917	Rua João Pinheiro, 628, Capitão Eduardo, Belo Horizonte, MG - 31998-300
+Bar e Restaurante da Picanha - São Tomaz	-19.81894	-43.95507	Rua Santo Antônio, 353, Venda Nova, Belo Horizonte, MG 
+Bar do Bigode	-19.8658	-43.91933	Praça Esmeraldas, 604, Eymard, Belo Horizonte, MG - 30410-080
+Bar do Bolão	-19.91662	-43.9814	Rua Vila Rica, 637, Jardim Montanhês, Belo Horizonte, MG - 30720-380
+Bar Floresta	-19.90668	-43.93362	Rua Machado, , Floresta, Belo Horizonte, MG - 31110-080
+Old Bar	-19.91344	-43.91205	Rua Alvin¿Polis, 122, Centro, Belo Horizonte, MG 
+Bar do Gláucio	-19.94129	-43.97438	Rua Indiana, 466, Jardim América, Belo Horizonte, MG - 30421-379
+Bar e Rstfernandomir	-19.91586	-43.93733	Avenida Santos Dumont, 248, Centro, Belo Horizonte, MG - 30111-040
+Bar do Orlando	-19.91628	-43.9108	Rua Alvinópolis, 460, Horto, Belo Horizonte, MG - 31010-340
+Bar da Esquina	-19.92776	-43.93547	Rua Sergipe, 146, Região da Nossa Senhora da Boa, Belo Horizonte, MG 
+Bar do André	-18.91887	-48.2398	Avenida Belarmino Cotta Pacheco, , Santa Mônica, Belo Horizonte, MG - 38408-168
+Bar da Baiana	-19.91555	-43.90473	Rua Demétrio Ribeiro, 883, Vera Cruz, Belo Horizonte, MG - 30285-680
+Venda Velha Restaurante Bar	-19.91482	-43.98081	Rua Vila Rica, 812, Jardim Montanhês, Belo Horizonte, MG - 30730-592
+Bar da Neusa	-19.89084	-43.93922	Rua Itu, 0, Renascença, Belo Horizonte, MG - 31130-570
+Bar Lanchonete e Restaurante Madureira	-19.9179	-43.93401	Rua Aarão Reis, 388, Floresta, Belo Horizonte, MG - 30120-000
+Bar e Restaurante Ligeirinho	-19.92348	-43.92608	Rua Álvares Maciel, 558, Santa Efigênia, Belo Horizonte, MG - 30150-250
+Bar e Restaurante do Cafe	-19.92594	-43.93822	Avenida Álvares Cabral, 344, Santo Agostinho, Belo Horizonte, MG - 30170-000
+Godofrêdo Bar e Restaurante	-19.91687	-43.91203	Rua Paraisópolis, 738, Santa Efigênia, Belo Horizonte, MG - 31010-330
+Bar e Mercearia Viana	-19.97711	-43.99898	Avenida Mannesmann, 250, Milionários, Belo Horizonte, MG 
+Chopp Bar Bh Delivery	-19.94407	-43.93229	Rua Montes Claros, 378, carmo sion, Cruzeiro, Belo Horizonte, MG - 30310-370
+Bar e Mercearia Jrj	-19.91149	-43.93512	Rua Pouso Alegre, 447, Floresta, Belo Horizonte, MG 
+Bar e Restaurante João Véio	-19.85192	-43.95887	Rua Mascarenhas de Morais, 57, Aeroporto, Belo Horizonte, MG - 31270-720
+Walmaks Bar e Restaurante - Nova Vista	-19.88545	-43.89979	Rua Lunds Ferreira, 337, Nova Vista, Belo Horizonte, MG - 31070-120
+Bar e Restaurante Samonte  - João Pinheiro	-19.92556	-43.99852	Avenida Vereador Cícero Ildefonso, 655, João Pinheiro, Belo Horizonte, MG - 30530-000
+Royal Center Scotch Bar  - Funcionários	-19.9395	-43.93873	Rua Sergipe, 1493, Região da Nossa Senhora da Boa, Belo Horizonte, MG 
+Wilson de Souza - Bar e Mercearia - Europa	-19.80461	-43.96759	Rua Cadiz, 234, Europa, Belo Horizonte, MG - 31620-350
+Bar e Mercearia Natan - Nova Esperança	-19.89678	-43.95969	Rua Martins Alves, 971, Nova Esperança, Belo Horizonte, MG - 31230-410
+Bar e Mercearia Vila Sao Jorge	-19.80988	-43.99969	Rua Cinco, 41, Lagoa, Belo Horizonte, MG - 31578-025
+Bar e Mercearia Sao Judas Tadeu	-19.8496	-43.9056	Rua Papa Honório Iii, 334, Ouro Minas, Belo Horizonte, MG - 31870-150
