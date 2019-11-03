@@ -14,13 +14,14 @@ id = c.getFBID()
 
 FacebookAdsApi.init(access_token=access_token)
 
-fields = [
-]
+fields = []
+
 params = {
   'name': 'My campaign',
   'objective': 'LINK_CLICKS',
   'status': 'PAUSED',
 }
+
 print (AdAccount(id).create_campaign(
   fields=fields,
   params=params,
