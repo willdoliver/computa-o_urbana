@@ -11,6 +11,7 @@ access_token = c.getFBAccessToken()
 app_secret = c.getFBAppSecret()
 app_id = c.getFBAppID()
 id = c.getFBID()
+
 FacebookAdsApi.init(access_token=access_token)
 
 fields = [
