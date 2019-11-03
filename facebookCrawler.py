@@ -7,10 +7,10 @@ from facebook_business.api import FacebookAdsApi
 
 
 # Token to ads_management
-access_token = 'EAAF7QUK5YhoBAPGtDNYrgWa936BIouhKb5vP1ZCvY3ZAP2IHVdqlbZCQZBiZBV7s7vkHvaunOiUUite6qykubdwzDIJ1YnEtR4p6bzqZBIWZCQYsFrQuuYOiZCx6LKBAvnTs7ZCD6ZC5yyPBJ14G5gahZBMuN23OBnI5urUrddMvmfihAZDZD'
-app_secret = '1378d175983f3ade228e656bb6c8f0ec'
-app_id = '416995199246874'
-id = '<AD_ACCOUNT_ID>'
+access_token = c.getFBAccessToken()
+app_secret = c.getFBAppSecret()
+app_id = c.getFBAppID()
+id = c.getFBID()
 FacebookAdsApi.init(access_token=access_token)
 
 fields = [
