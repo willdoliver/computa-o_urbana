@@ -1,9 +1,9 @@
 from pymongo import MongoClient
 
 client = MongoClient()
-db = client['twitterData']
+db = client['google_curitiba']
 
-cursor = db.checkins.find()
+cursor = db.checkins.find({"state":"NY"})
 
 #cursor = db.checkins.find({"user.screen_name": "soldadonofront"})
 

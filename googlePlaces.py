@@ -5,7 +5,6 @@ from slugify import slugify
 import requests
 import time
 import json
-import time
 import connection as c
 
 import pprint
@@ -98,4 +97,4 @@ for local in locations:
             else:
                 break
 
-print("FINISH PLACES")
+print("FINISH GOOGLE PLACES")
