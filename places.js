@@ -15,6 +15,14 @@ db.getCollection("foursquare_curitiba").find(
     {"response.venue.id": "56c8bb39cd1072488939b2d6"}
 )
 
+
+db.business.aggregate([
+    {"$group" : {_id:"$state", count:{$sum:1}}}
+])
+
+db.getCollection("yelp_review").find({})
+
+
 db.getCollection("foursquare_curitiba").aggregate([
     {"$group" : 
         {

@@ -40,7 +40,8 @@ if __name__ == "__main__":
         {
             "id": 1,
             "formatted_address" : 1,
-            "geometry.location" : 1
+            "geometry.location" : 1,
+            "rating" : 1
         }
     )
 
@@ -50,9 +51,12 @@ if __name__ == "__main__":
             "response.venue.id": 1,
             "response.venue.location.address": 1,
             "response.venue.location.lat": 1,
-            "response.venue.location.lng": 1
+            "response.venue.location.lng": 1,
+            "response.venue.rating": 1
         }
     )
+
+    items = {}
 
     for googlePlace in googlePlaces:
         p1 = (googlePlace['geometry']['location']['lat'], googlePlace['geometry']['location']['lng'])
@@ -65,7 +69,8 @@ if __name__ == "__main__":
             
             d = distance(p1, p2)
             distances.append(d)
-            print(googlePlace["id"] + " --- " + fsqAux["id"] + ' distance: '+ str(d))
+            # print(googlePlace["id"] + " --- " + fsqAux["id"] + ' distance: '+ str(d))
+            print(str(googlePlace["rating"]) + " --- " + str(fsqAux["rating"]/2) + ' distance: '+ str(d))
         
         distances.sort()
         # pp.pprint(distances)
