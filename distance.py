@@ -69,6 +69,7 @@ if __name__ == "__main__":
             
             d = distance(p1, p2)
             distances.append(d)
+
             # print(googlePlace["id"] + " --- " + fsqAux["id"] + ' distance: '+ str(d))
             print(str(googlePlace["rating"]) + " --- " + str(fsqAux["rating"]/2) + ' distance: '+ str(d))
         
