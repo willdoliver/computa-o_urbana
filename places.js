@@ -9,8 +9,13 @@ db.getCollection("foursquare_curitiba").find({
 db.getCollection("foursquare_curitiba").find({})
 
 db.getCollection("google_curitiba").find(
-    {"id": "810c221acb2b63af7495239854bb23757da22902"}
-)
+                {"name": /.*Pizza Hut.*/},
+                {
+                    "name": 1,
+                    "rating" : 1
+                });
+                
+                
 db.getCollection("foursquare_curitiba").find(
     {"response.venue.id": "56c8bb39cd1072488939b2d6"}
 )
@@ -24,6 +29,7 @@ db.getCollection("yelp_review").find({})
 
 
 db.getCollection("foursquare_curitiba").aggregate([
+    {"name": "Burger King"},
     {"$group" : 
         {
             _id:"response.venue.rating", 

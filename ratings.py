@@ -5,8 +5,11 @@ import time
 import json
 import re
 import difflib
+import numpy as np
 import pandas as pd
+from pandas import DataFrame
 import matplotlib.pyplot as plt
+import os
  
 import pprint
 pp = pprint.PrettyPrinter(indent=2)
@@ -43,11 +46,16 @@ if __name__ == "__main__":
         'Pizza Hut'
     ]
 
+    allPlaces = {}
+    allPlaces2 = {}
+    
+    # os.system("sudo service mongodb start")
+    
     for local in locations:
         db = client['local']
         database = 'google_' + str(slugify(local)).replace('-', '_')
         db = db[database]
-        print(local)
+        # print(local)
 
         googlePlaces = db.find(
             {},
@@ -60,69 +68,74 @@ if __name__ == "__main__":
         aux = []
         ratingPlaces = {}
         ratingPlaces2 = {}
-        # ratingPlaces = pd.DataFrame(ratingPlaces)
-
+        ratingQtde = {}
+        
         for item in googlePlaces:
             try:
                 name = difflib.get_close_matches(item["name"], queries, 1, 0.4)[0]
-                # print(str(name) + ' nota:' +  str(item["rating"]))
                 
-                if name in ratingPlaces.keys():
-                    ratingPlaces[name] += item["rating"]
+                # Versão apenas com local e array de ratings
+                if name in ratingPlaces2:
+                    ratingPlaces2[name].append(item["rating"])
                 else:
-                    ratingPlaces[name] = item["rating"]
-
-                if name in ratingPlaces2.keys():
-                    ratingPlaces2[name] += 1
+                    ratingPlaces2[name] = [] 
+                    ratingPlaces2[name].append(item['rating'])
+                    
+                # Versão com local e valores detalhados
+                if name in ratingPlaces:
+                    ratingPlaces[name]['rating'].append(item["rating"])
+                    ratingPlaces[name]['qtde'] += 1
                 else:
-                    ratingPlaces2[name] = 1
+                    ratingPlaces[name] = { 
+                        'rating': [item['rating']],
+                        'qtde': 1
+                    }
             except:
-                # print(item["name"])
                 continue
 
-            # print(str(item["name"]) + '<>' + str(queries) + ' = ' + str(name))
+        for query in queries:
+            try:
+                ratingPlaces[query]['avg'] = round(sum(ratingPlaces[query]['rating']) / ratingPlaces[query]['qtde'], 2)
+                # ratingPlaces[query]['min'] = round(min(ratingPlaces[query]['rating']), 2)
+                # ratingPlaces[query]['max'] = round(max(ratingPlaces[query]['rating']), 2)
+                ratingPlaces[query].pop('rating')
+                ratingPlaces[query].pop('qtde')
+            except:
+                continue
 
-        # pp.pprint(ratingPlaces2)
+        allPlaces[local] = ratingPlaces
+        allPlaces2[local] = ratingPlaces2
 
-        ratings = []
-        places = []
 
-        for x in ratingPlaces.keys():
-            places.append(x)
+    # Visualização dos dados
+    for local in locations:
+        pp.pprint(allPlaces2[local])
 
-        for x in ratingPlaces.values():
-            ratings.append(x)
-        
+        # https://matplotlib.org/3.1.0/tutorials/introductory/pyplot.html
+        # plt.plot([Y], [X])
 
-        pp.pprint(places)
-        pp.pprint(ratings)
-
-        plt.plot(places, ratings)
+        plt.plot(allPlaces2[local])
         plt.title(local)
-        plt.xlabel('Local')
-        plt.ylabel('Rating')
+        plt.xlabel('Cidade')
+        plt.ylabel('Nota')
         plt.show()
+        exit(0)
+        
+        # pp.pprint(ratingPlaces.values())
+        # pp.pprint(ratingPlaces.keys())
+        # print(pd.DataFrame(ratingPlaces))
+
+        # fig = plt.figure(1, figsize=(20, 10))
+        # ax = fig.add_subplot(111)
+        # bp = ax.boxplot(ratingPlaces, patch_artist=True)
+
+        # df = pd.DataFrame(ratingPlaces)
+        # df['x'] = pd.Series(ratingPlaces.keys())
+        # boxplot = df.boxplot(by='x')
         # exit(0)
 
-    items = {}
 
-    for googlePlace in googlePlaces:
-        p1 = (googlePlace['geometry']['location']['lat'], googlePlace['geometry']['location']['lng'])
+        # exit(0)
 
-        distances = []
-
-        for fsqPlace in foursquarePlaces:
-            fsqAux = fsqPlace['response']['venue']
-            p2 = (fsqAux['location']['lat'], fsqAux['location']['lng'])
-            
-            d = distance(p1, p2)
-            distances.append(d)
-
-            # print(googlePlace["id"] + " --- " + fsqAux["id"] + ' distance: '+ str(d))
-            print(str(googlePlace["rating"]) + " --- " + str(fsqAux["rating"]/2) + ' distance: '+ str(d))
-        
-        distances.sort()
-        # pp.pprint(distances)
-        # pp.pprint("Menor distancia entre Google:" + googlePlace["id"] + " e Fsq:" + fsqAux["id"]) 
-        pp.pprint(str(distances[0]) + " Km")
-        exit(0)
+    pp.pprint(allPlaces)
+    
