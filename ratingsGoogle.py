@@ -96,10 +96,10 @@ if __name__ == "__main__":
         for query in queries:
             try:
                 ratingPlaces[query]['avg'] = round(sum(ratingPlaces[query]['rating']) / ratingPlaces[query]['qtde'], 2)
-                # ratingPlaces[query]['min'] = round(min(ratingPlaces[query]['rating']), 2)
-                # ratingPlaces[query]['max'] = round(max(ratingPlaces[query]['rating']), 2)
-                ratingPlaces[query].pop('rating')
-                ratingPlaces[query].pop('qtde')
+                ratingPlaces[query]['min'] = round(min(ratingPlaces[query]['rating']), 2)
+                ratingPlaces[query]['max'] = round(max(ratingPlaces[query]['rating']), 2)
+                # ratingPlaces[query].pop('rating')
+                # ratingPlaces[query].pop('qtde')
             except:
                 continue
 
@@ -109,33 +109,63 @@ if __name__ == "__main__":
 
     # Visualização dos dados
     for local in locations:
-        pp.pprint(allPlaces2[local])
 
-        # https://matplotlib.org/3.1.0/tutorials/introductory/pyplot.html
-        # plt.plot([Y], [X])
+        labels = {} 
+        data = {}
 
-        plt.plot(allPlaces2[local])
+        labels, data = allPlaces2[local].keys(), allPlaces2[local].values()
+
+        # pp.pprint(allPlaces2[local])
+        plt.boxplot(data)
+        plt.xticks(range(1, len(labels) + 1), labels, rotation=45)
         plt.title(local)
-        plt.xlabel('Cidade')
+
+        plt.xlabel('Locais')
         plt.ylabel('Nota')
-        plt.show()
-        exit(0)
+        plt.ylim(ymax=5.5)
+        plt.ylim(ymin=-0.5)
+        plt.subplots_adjust(bottom=0.35)
         
-        # pp.pprint(ratingPlaces.values())
-        # pp.pprint(ratingPlaces.keys())
-        # print(pd.DataFrame(ratingPlaces))
+        img_name = 'imagens/'+str(slugify(local)).replace('-', '_')+'Google.png'
+        print(img_name)
+        plt.savefig(img_name)
+        plt.show()
 
-        # fig = plt.figure(1, figsize=(20, 10))
-        # ax = fig.add_subplot(111)
-        # bp = ax.boxplot(ratingPlaces, patch_artist=True)
 
-        # df = pd.DataFrame(ratingPlaces)
-        # df['x'] = pd.Series(ratingPlaces.keys())
-        # boxplot = df.boxplot(by='x')
+    # Local de acordo com as cidades
+    for query in queries:
+        
+        placesByCity = {}
+        labels = {} 
+        data = {}
+
+        for local in locations:
+            # labels, data = allPlaces2[local][query].keys(), allPlaces2[local][query].values()
+            try:
+                placesByCity[local] = allPlaces2[local][query]
+                # pp.pprint(allPlaces2[local][query])
+            except:
+                continue
+
+        # pp.pprint(placesByCity)
         # exit(0)
+        if query == 'MC Donalds':
+            query = 'Mc Donald`s'
 
+        labels, data = placesByCity.keys(), placesByCity.values()
 
-        # exit(0)
+        plt.boxplot(data)
+        plt.xticks(range(1, len(labels) + 1), labels, rotation='vertical')
+        plt.title(query)
+        plt.xlabel('Cidades')
+        plt.ylabel('Nota')
+        plt.ylim(ymax=5.5)
+        plt.ylim(ymin=-0.5)
+        plt.subplots_adjust(bottom=0.35)
+        
+        img_name = 'imagens/'+str(slugify(query)).replace('-', '_')+'Google.png'
+        print(img_name)
 
-    pp.pprint(allPlaces)
-    
+        plt.savefig(img_name)
+        plt.show()
+
