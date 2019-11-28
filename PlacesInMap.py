@@ -68,6 +68,9 @@ if __name__ == "__main__":
 	)
 
 	for local in locations:
+		# if local not in ['Curitiba', 'Chicago', 'New York']:
+			# continue
+
 		db = client['local']
 		slugCity = str(slugify(local)).replace('-', '_')
 		database = 'google_' + slugCity
@@ -86,15 +89,18 @@ if __name__ == "__main__":
 		coords = locations[local].split(',')
 		toMap = folium.Map(
 			location=[coords[0], coords[1]],
-			zoom_start = 10
+			zoom_start = 13
 		)
 
 		for item in googlePlaces:
+			# Rating control
+			rating_limit = 5
+			if item['rating'] > rating_limit:
+				continue
+
 			try:
 				name = difflib.get_close_matches(item["name"], queries, 1, 0.4)[0]
-				# print('lat:' +str(item['geometry']['location']['lat']) +' - lng: ' + str(item['geometry']['location']['lng']))
-				# print(name + ', color: ' + str(colors[name]))
-
+				
 				folium.Marker(
 					location=[item['geometry']['location']['lat'], item['geometry']['location']['lng']],
 					icon=folium.Icon(color=colors[name]),
@@ -107,10 +113,10 @@ if __name__ == "__main__":
 					popup=item['rating']
 				).add_to(world)
 			except:
-				# print('deu ruim: ' + str(item["name"]))
 				continue
-		toMap.save('maps/'+slugCity+'_map.html')
+
+		toMap.save('maps/'+slugCity+'_map_'+str(rating_limit)+'.html')
 		# exit(0)
-	world.save('maps/world_map.html')
+	# world.save('maps/world_map.html')
 
 

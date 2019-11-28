@@ -46,7 +46,7 @@ if __name__ == "__main__":
         'Pizza Hut'
     ]
 
-    allPlaces = {}
+    # allPlaces = {}
     allPlaces2 = {}
     
     # os.system("sudo service mongodb start")
@@ -65,12 +65,13 @@ if __name__ == "__main__":
             }
         )
 
-        aux = []
-        ratingPlaces = {}
+        # ratingPlaces = {}
         ratingPlaces2 = {}
         ratingQtde = {}
-        
+
+        count = 0        
         for item in googlePlaces:
+            
             try:
                 name = difflib.get_close_matches(item["name"], queries, 1, 0.4)[0]
                 
@@ -82,14 +83,14 @@ if __name__ == "__main__":
                     ratingPlaces2[name].append(item['rating'])
                     
                 # Versão com local e valores detalhados
-                if name in ratingPlaces:
-                    ratingPlaces[name]['rating'].append(item["rating"])
-                    ratingPlaces[name]['qtde'] += 1
-                else:
-                    ratingPlaces[name] = { 
-                        'rating': [item['rating']],
-                        'qtde': 1
-                    }
+                # if name in ratingPlaces:
+                #     ratingPlaces[name]['rating'].append(item["rating"])
+                #     ratingPlaces[name]['qtde'] += 1
+                # else:
+                #     ratingPlaces[name] = { 
+                #         'rating': [item['rating']],
+                #         'qtde': 1
+                #     }
             except:
                 continue
 
@@ -103,7 +104,7 @@ if __name__ == "__main__":
             except:
                 continue
 
-        allPlaces[local] = ratingPlaces
+        # allPlaces[local] = ratingPlaces
         allPlaces2[local] = ratingPlaces2
 
 
@@ -133,6 +134,7 @@ if __name__ == "__main__":
 
 
     # Local de acordo com as cidades
+    queries = []
     for query in queries:
         
         placesByCity = {}
